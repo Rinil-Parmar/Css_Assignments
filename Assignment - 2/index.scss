@@ -1,0 +1,110 @@
+$primary-color: #D8DA3D;
+$secondary-color: #80007E;
+$accent-color: #FF7F00;
+$highlight-color: #0000FF;
+
+$container-margin-top: -10px;
+$li-margin: 8px;
+$li-margin-left: -30px;
+$li-padding: 5px;
+$li-border-width: 15px;
+$li-border-color: black;
+
+$para-style-margin-top: 50px;
+$para-style-padding: 10px;
+$para-style-width: 950px;
+$para-style-border-width: 1.5px;
+$para-style-border-color: black;
+$para-style-border-image: repeating-linear-gradient(45deg, black, black 10px, transparent 1px, transparent 15px) 1;
+
+$hover-animation-duration: 2s;
+$hover-animation-scale: 1.2;
+
+@mixin hover-animation {
+    animation: bounce-hover #{$hover-animation-duration} normal;
+}
+
+@keyframes bounce-hover {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(#{$hover-animation-scale});
+    }
+}
+
+body {
+    background-color: $primary-color;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: $secondary-color;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 40px 30px 0 0;
+}
+
+li {
+    list-style-type: none;
+    background: white;
+    width: 165px;
+    margin: $li-margin;
+    margin-left: $li-margin-left;
+    padding: $li-padding;
+    border-right: $li-border-width solid $li-border-color;
+}
+
+li.one {
+    @extend li;
+    border-right-color: $accent-color;
+}
+
+li.two {
+    @extend li;
+    border-right-color: $highlight-color;
+}
+
+.container {
+    display: flex;
+    margin-top: $container-margin-top;
+}
+
+.para-style {
+    border-top: 1px dashed red;
+    width: $para-style-width;
+    margin-top: $para-style-margin-top;
+    color: black;
+    padding: $para-style-padding 0;
+}
+
+.para-style p.one {
+    border: $para-style-border-width dashed black;
+    border-image: $para-style-border-image;
+    padding: $para-style-padding;
+    width: $para-style-width;
+    &:hover {
+        @include hover-animation;
+    }
+}
+
+.para-style p.two {
+    border: $para-style-border-width dashed red;
+    border-image: repeating-linear-gradient(45deg, rgb(255, 0, 0), rgb(240, 8, 8) 10px, transparent 1px, transparent 15px) 1;
+    padding: $para-style-padding;
+    width: $para-style-width;
+    text-align: right;
+    &:hover {
+        @include hover-animation;
+    }
+}
+
+p.three {
+    border: 1px dashed blue;
+    padding: $para-style-padding;
+    width: $para-style-width;
+    text-align: center;
+    &:hover {
+        @include hover-animation;
+    }
+}
