@@ -1,0 +1,44 @@
+body{
+    font-family: Georgia, "Times New Roman",
+    Times, serif;
+    color: #454545;
+    text-align: center;
+    padding: 10px;
+}
+
+.container{
+    /* align-items: center; */
+    border: 1px solid black;
+    outline: 1px solid black; 
+    outline-offset: 15px;
+    width: 800px;
+    height: 500px;
+    margin: 20px auto;
+}
+
+.first-container{
+    background-color: #FF9999;
+    border: 1px solid black;
+    height: 190px;
+}
+
+.second-container{
+    display: flex;
+    height: 310px;
+    border: 1px solid black;
+}
+
+.second-container div.one{
+    background-image: url(Assignment-2-1.PNG);
+    background-size: 15cm;
+    background-repeat: no-repeat;
+    width: 650px;
+    border: 10px solid yellow;
+}
+
+.second-container div.two{
+    background-color: #ECECFB;
+    text-align: center;
+    width: 250px;
+    border: 1px solid black;
+}
